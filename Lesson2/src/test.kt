@@ -33,5 +33,5 @@ fun templatePract() {
     var trout: String = "yes"
     var haddock: String = "no"
     var snapper: String = "yes"
-    println("fish i'll eat trout:${trout}, haddock:${haddock}, and snapper:${snapper}")
+    println("fish i'll eat trout: ${trout}, haddock: ${haddock}, and snapper: ${snapper}")
 }
