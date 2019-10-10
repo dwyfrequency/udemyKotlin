@@ -14,6 +14,7 @@ fun main() {
 
     printWelcome()
     templatePract()
+    whenPract()
 }
 
 fun totalAquar(): Int {
@@ -33,5 +34,15 @@ fun templatePract() {
     var trout: String = "yes"
     var haddock: String = "no"
     var snapper: String = "yes"
-    println("fish i'll eat trout: ${trout}, haddock: ${haddock}, and snapper: ${snapper}")
+    println("fish i'll eat trout: $trout, haddock: $haddock, and snapper: ${snapper + "ssss"}")
+}
+
+fun whenPract() {
+    val fishName = "SuperFish"
+    when(fishName.length) {
+        0 -> print("error msg")
+        in 3..12 -> print("solid name my fish")
+        else -> print("blem")
+
+    }
 }
