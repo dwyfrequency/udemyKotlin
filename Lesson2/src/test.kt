@@ -1,3 +1,5 @@
+import kotlin.math.pow
+
 fun main() {
     println("blem")
     println(totalAquar())
@@ -15,8 +17,17 @@ fun main() {
     printWelcome()
     templatePract()
     whenPract()
+    arrayPract()
 }
 
+fun arrayPract() {
+    val arr = Array(7){1000.0.pow(it)}
+    val sizes = arrayOf("byte", "kilobyte", "megabyte", "gigabyte",
+        "terabyte", "petabyte", "exabyte")
+    for ((i, value) in arr.withIndex()) {
+        println("1 ${sizes[i]} = ${value.toLong()} bytes")
+    }
+}
 fun totalAquar(): Int {
     return 2.plus(71).plus(233).minus(13).div(30).plus(1)
 }
