@@ -24,8 +24,5 @@ fun conditionals() {
 }
 
 fun caseWhen(hour: String) {
-    when(hour.toInt()) {
-        23 -> print("23:00")
-        else -> print("(not) 23:00")
-    }
+    println(if(hour.toInt() in 12..24) "Good night Kotlin" else "Good morning Kotlin")
 }
