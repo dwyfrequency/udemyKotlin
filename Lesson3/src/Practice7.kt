@@ -1,6 +1,6 @@
 fun main(args: Array<String>) {
     println("Hello from main")
-    getFortuneCookie()
+    println(getFortuneCookie())
 }
 
 fun getFortuneCookie(): String {
@@ -13,7 +13,9 @@ fun getFortuneCookie(): String {
     "Treasure your friends because they are your greatest fortune.")
 
     print("Enter your birthday: ")
-    val birthday = readLine()
-    println("bday: ${birthday?.toIntOrNull() ?: 1}")
-    return ""
+    val birthday = readLine()?.toIntOrNull() ?: 1
+    println("bday: $birthday")
+    println(arr.count())
+    val remainder: Int = birthday % arr.count()
+    return arr[remainder]
 }
