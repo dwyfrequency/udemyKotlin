@@ -1,6 +1,6 @@
 fun main(args: Array<String>) {
     println("Hello from main")
-    println(getFortuneCookie())
+    println("Your fortune is: ${getFortuneCookie()}")
 }
 
 fun getFortuneCookie(): String {
