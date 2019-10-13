@@ -1,23 +1,38 @@
 import kotlin.math.pow
 
 fun main() {
-    println("blem")
-    println(totalAquar())
-    var rainbowColor : String? = null
-    println(rainbowColor ?: "Blue")
+//    println("blem")
+//    println(totalAquar())
+//    var rainbowColor : String? = null
+//    println(rainbowColor ?: "Blue")
+//
+//    val list1: List<String?> = listOf("High", null)
+//    val list2: List<String?>? = null
+//    println(list1)
+//    println(list2)
+//
+//    var nullTest:Int? = null
+//    println(nullTest?.inc() ?: 72.inc())
+//
+//    printWelcome()
+//    templatePract()
+//    whenPract()
+//    arrayPract()
+    arrayLooping()
+}
 
-    val list1: List<String?> = listOf("High", null)
-    val list2: List<String?>? = null
-    println(list1)
-    println(list2)
+fun arrayLooping() {
+    var list3 : MutableList<Int> = mutableListOf()
+    for(i in 11..15) list3.add(i)
+    print(list3)
 
-    var nullTest:Int? = null
-    println(nullTest?.inc() ?: 72.inc())
+    var listStr = list3.map { it -> it.times(3).toDouble() }
+    print(listStr)
 
-    printWelcome()
-    templatePract()
-    whenPract()
-    arrayPract()
+    var list4: MutableList<Int> = mutableListOf()
+    for (i in 0..100 step  10) { list4.add(i) }
+    println("list4: $list4")
+
 }
 
 fun arrayPract() {
