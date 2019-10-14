@@ -23,12 +23,8 @@ fun whatShouldIDoToday2(mood: String, weather: String = "sunny", temperature: In
     }
 }
 
-fun eval(mood: String, weather: String, temperature: Int): Boolean {
-    return mood == "sad" && weather == "rainy" && temperature == 0
-}
+fun eval(mood: String, weather: String, temperature: Int) = mood == "sad" && weather == "rainy" && temperature == 0
+fun tempEval(temperature: Int) = temperature > 35
 
-fun tempEval(temperature: Int): Boolean {
-    return temperature > 35
-}
 
 
