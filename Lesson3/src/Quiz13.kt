@@ -1,30 +1,24 @@
 import com.sun.org.apache.xpath.internal.operations.Bool
 
 fun main(args: Array<String>) {
-    println("Hello!!!!!")
     println(whatShouldIDoToday("happy", "sunny"))
-    println(whatShouldIDoToday2("happy", "sunny"))
-
+    println(whatShouldIDoToday("sad"))
+    print("How do you feel?")
+    println(whatShouldIDoToday(readLine()!!))
 }
 
+fun isVeryHot (temperature: Int) = temperature > 35
+fun isSadRainyCold (mood: String, weather: String, temperature: Int) =
+    mood == "sad" && weather == "rainy" && temperature == 0
+fun isHappySunny (mood: String, weather: String) = mood == "happy" && weather == "sunny"
 fun whatShouldIDoToday(mood: String, weather: String = "sunny", temperature: Int = 24) : String {
-        if(mood == "happy" && weather == "sunny") return "go for a walk"
-        return "Stay home and read."
-
-}
-
-fun whatShouldIDoToday2(mood: String, weather: String = "sunny", temperature: Int = 24) : String {
-//    omitting the conditional, allows us to write this logic
     return when {
-        eval(mood, weather, temperature) -> "stay in bed"
-        mood == "happy" && weather == "Sunny" -> "go for a walk"
-        tempEval(temperature) -> "go swimming"
+        isVeryHot(temperature) -> "go swimming"
+        isSadRainyCold(mood, weather, temperature) -> "stay in bed"
+        isHappySunny(mood, weather) -> "go for a walk"
         else -> "Stay home and read."
     }
 }
-
-fun eval(mood: String, weather: String, temperature: Int) = mood == "sad" && weather == "rainy" && temperature == 0
-fun tempEval(temperature: Int) = temperature > 35
 
 
 
