@@ -14,11 +14,10 @@ fun getFortuneCookie(): String {
 
     print("Enter your birthday: ")
     val birthday = getBirthday()
-    val remainder: Int = birthday % arr.count()
     return when(birthday) {
         28, 31 -> "Blmmmmer"
         in 1..7 -> "First week"
-        else -> arr[remainder]
+        else -> arr[birthday.rem(arr.size)]
     }
 
 }
