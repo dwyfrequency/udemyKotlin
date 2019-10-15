@@ -19,6 +19,7 @@ var dirtyTotal = 20
 fun dirtyProcessor() {
     dirtyTotal = updateDirty(dirtyTotal, anotherone)
     println(dirtyTotal)
+//    need :: for passing in regular func - note, not needed for lambda see above
     dirtyTotal = updateDirty(dirtyTotal, ::feedFish)
     println(dirtyTotal)
 
