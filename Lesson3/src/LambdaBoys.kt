@@ -1,5 +1,6 @@
 fun main(args: Array<String>) {
     println("We ballin boy")
+    dirtyProcessor()
 }
 
 // Lambda is always surrounded by curly brackets
@@ -12,4 +13,13 @@ fun feedFish(foodUnits: Int) = foodUnits + 10
 
 fun updateDirty(initialDirt: Int, callback: (Int) -> Int): Int {
     return callback(initialDirt)
+}
+
+var dirtyTotal = 20
+fun dirtyProcessor() {
+    dirtyTotal = updateDirty(dirtyTotal, anotherone)
+    println(dirtyTotal)
+    dirtyTotal = updateDirty(dirtyTotal, ::feedFish)
+    println(dirtyTotal)
+
 }
