@@ -7,5 +7,5 @@ fun main() {
 fun buildAquarium() {
     val myAquarium = Aquarium()
     println(myAquarium.length)
-    println(myAquarium.volume())
+    println(myAquarium.volume)
 }
