@@ -2,6 +2,7 @@ package aquarius
 
 fun main() {
     buildAquarium()
+    fishGen()
 }
 
 fun buildAquarium() {
@@ -14,4 +15,10 @@ fun buildAquarium() {
     val newAquarium = Aquarium(14)
     println("water: ${newAquarium.water}; length: ${newAquarium 
         .length}")
+}
+
+fun fishGen() {
+    val fish = Fish(false, 20)
+    val fish2 = Fish(true, 20)
+    print("fish: ${fish.size}; fish2: ${fish2.size}")
 }
