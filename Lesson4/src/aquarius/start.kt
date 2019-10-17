@@ -11,6 +11,7 @@ fun buildAquarium() {
     myAquarium.volume = 0
     println(myAquarium.volume)
 
-    val newAquarium = Aquariu
-    print
+    val newAquarium = Aquarium(14)
+    println("water: ${newAquarium.water}; length: ${newAquarium 
+        .length}")
 }
