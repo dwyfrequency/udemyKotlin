@@ -11,4 +11,6 @@ fun buildAquarium() {
     myAquarium.volume = 0
     println(myAquarium.volume)
 
+    val newAquarium = Aquariu
+    print
 }
