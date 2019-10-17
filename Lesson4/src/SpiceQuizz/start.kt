@@ -2,6 +2,7 @@ package SpiceQuizz
 
 fun main() {
     val spiceGang = SimpleSpice()
+    spiceBoy()
 }
 
 fun spiceBoy() {
@@ -14,4 +15,6 @@ fun spiceBoy() {
         SimpleSpice("green curry", "mild"),
         SimpleSpice("hot pepper", "extremely spicy")
     )
+    val lowerSpice = spices1.filter { it -> it.heat <= 8 }
+    for (i in lowerSpice) println("${i.name} : ${i.spiciness}")
 }

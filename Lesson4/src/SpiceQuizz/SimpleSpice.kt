@@ -2,11 +2,15 @@ package SpiceQuizz
 
 class SimpleSpice(var name: String = "red", var spiciness: String = "mild") {
 
-    private val heat : Int
+    val heat : Int
         get() { return when (spiciness) {
-            "very hot" -> 9
-            "hot" -> 7
+            "extremely spicy" -> 10
+            "spicy" -> 8
+            "medium" -> 6
             "mild" -> 5
             else -> 0
         }}
+    init {
+        println("spice named $name created")
+    }
 }
