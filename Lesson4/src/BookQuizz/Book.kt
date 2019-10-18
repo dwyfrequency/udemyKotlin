@@ -1,0 +1,4 @@
+package BookQuizz
+
+class Book {
+}
