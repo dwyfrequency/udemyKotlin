@@ -3,6 +3,7 @@ package aquarius
 fun main() {
     buildAquarium()
     fishGen()
+    makeFish()
 }
 
 fun buildAquarium() {
@@ -21,4 +22,9 @@ fun fishGen() {
     val fish = Fish(false, 20)
     val fish2 = Fish(true, 20)
     print("fish: ${fish.size}; fish2: ${fish2.size}")
+}
+
+fun makeFish() {
+    val goldFish = GoldFish()
+    val shark = Shark()
 }

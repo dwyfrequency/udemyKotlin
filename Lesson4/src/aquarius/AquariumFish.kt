@@ -1,5 +1,7 @@
 package aquarius
 
+// abstract classes can have constructors while interfaces cannot
+
 abstract class AquariumFish {
     abstract val color: String
 }
@@ -7,14 +9,15 @@ abstract class AquariumFish {
 class Shark: AquariumFish(), FishAction {
     override val color: String = "grey"
     override fun eat() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        println("Shark nom nom")
+
     }
 }
 
 class GoldFish: AquariumFish(), FishAction {
     override val color: String = "gold"
     override fun eat() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        println("GoldFish nom nom")
     }
 }
 
