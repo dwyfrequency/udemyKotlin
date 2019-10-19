@@ -27,4 +27,10 @@ fun fishGen() {
 fun makeFish() {
     val goldFish = GoldFish()
     val shark = Shark()
+    feedFish(shark)
+}
+
+// by specifing the interface as the type, we can pass in anything that implements that interface
+fun feedFish(fish: FishAction) {
+    fish.eat()
 }
