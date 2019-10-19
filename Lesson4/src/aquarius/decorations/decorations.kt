@@ -24,7 +24,7 @@ fun makeDecorations() {
     val d5 =  Decorations2("big rocks", "mahug", "yeet")
     println(d5)
 
-//    Destucturing
+//    decomposition - vars are assigned in the order they are declared in the class
     val (rock, wood, diver) = d5
     println(rock)
     println(wood)
