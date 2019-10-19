@@ -1,31 +1,31 @@
-package aquarius
-
-fun main(args: Array<String>) {
+fun main (args: Array<String>) {
     delegate()
 }
 
 fun delegate() {
-    val gold = GoldFish()
-    println("GoldFish has color ${gold.color}")
-    gold.eat()
-    val peco = Peco()
-    peco.eat()
+    val pleco = Plecostomus()
+    println("Fish has has color ${pleco.color}")
+    pleco.eat()
+}
+
+interface FishAction {
+    fun eat()
 }
 
 interface FishColor {
     val color: String
 }
 
-// composing with mult interfaces
-class Peco: FishAction, FishColor by GoldColor {
-    override val color: String = "purp"
+object GoldColor : FishColor {
+    override val color = "gold"
+}
 
+class PrintingFishAction(val food: String) : FishAction {
     override fun eat() {
-        println("nom city beach")
+        println(food)
     }
 }
 
-// using singeton with object
-object GoldColor: FishColor {
-    override val color: String = "gold"
-}
+class Plecostomus (fishColor: FishColor = GoldColor):
+    FishAction by PrintingFishAction("eat a lot of algae"),
+    FishColor by fishColor

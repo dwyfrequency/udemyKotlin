@@ -1,8 +1,9 @@
 package Spices
 
 fun main() {
-    val curry = Curry("green", "spicy")
+    val curry = Curry("vindalu", "spicy")
     curry.grind()
+    curry.color
 }
 
 interface Grinder {
@@ -28,7 +29,7 @@ abstract class Spice (var name: String = "red", var spiciness: String = "mild") 
     }
 }
 
-class Curry(name: String, spiciness: String) : Spice(name, spiciness), Grinder {
+class Curry(name: String, spiciness: String, color: SpiceColor = YellowSpiceColor) : Spice(name, spiciness), Grinder, SpiceColor by color {
     override fun prepareSpice() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -36,4 +37,13 @@ class Curry(name: String, spiciness: String) : Spice(name, spiciness), Grinder {
     override fun grind() {
         super.grind()
     }
+}
+
+interface SpiceColor {
+    val color: String
+}
+
+object YellowSpiceColor : SpiceColor {
+    override val color: String
+        get() = "yellow"
 }
