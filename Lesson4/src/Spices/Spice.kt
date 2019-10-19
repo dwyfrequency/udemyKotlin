@@ -12,30 +12,17 @@ interface Grinder {
     }
 }
 
-abstract class Spice (var name: String = "red", var spiciness: String = "mild") {
-
-    val heat : Int
-        get() { return when (spiciness) {
-            "extremely spicy" -> 10
-            "spicy" -> 8
-            "medium" -> 6
-            "mild" -> 5
-            else -> 0
-        }}
+abstract class Spice(val name: String, val spiciness: String = "mild", color: SpiceColor) : SpiceColor by color {
     abstract fun prepareSpice()
-
-    init {
-        println("spice named $name created")
-    }
 }
 
-class Curry(name: String, spiciness: String, color: SpiceColor = YellowSpiceColor) : Spice(name, spiciness), Grinder, SpiceColor by color {
-    override fun prepareSpice() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+class Curry(name: String, spiciness: String, color: SpiceColor = YellowSpiceColor) : Spice(name, spiciness, color), Grinder {
+    override fun grind() {
+        println("we do really be grinding")
     }
 
-    override fun grind() {
-        super.grind()
+    override fun prepareSpice() {
+        grind()
     }
 }
 
